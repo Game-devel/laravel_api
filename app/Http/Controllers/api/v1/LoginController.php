@@ -20,6 +20,10 @@ class LoginController extends Controller
         
         $accessToken = Auth::user()->createToken('authToken')->accessToken;
 
-        return response(['user' => Auth::user(), 'access_token' => $accessToken]);
+        return response()->json(['_token' => $accessToken], 200);
     }
+    
+    public function unauthorized() { 
+        return response()->json("unauthorized", 401); 
+    } 
 }
