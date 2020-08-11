@@ -22,10 +22,10 @@ Route::prefix('/v1')->group(function() {
     Route::get('/categories', 'api\v1\CategoryController@index');
     Route::get('/products/{category_id?}', 'api\v1\ProductController@index');
 
-    Route::middleware('auth:api')->post('/categories', 'api\v1\CategoryController@store');
-    Route::middleware('auth:api')->put('/categories/{id}', 'api\v1\CategoryController@update');
-    Route::middleware('auth:api')->delete('/categories/{id}', 'api\v1\CategoryController@destroy');    
-    Route::middleware('auth:api')->post('/products', 'api\v1\ProductController@store');
-    Route::middleware('auth:api')->put('/products/{id}', 'api\v1\ProductController@update');
-    Route::middleware('auth:api')->delete('/products/{id}', 'api\v1\ProductController@destroy');
+    Route::post('/categories', 'api\v1\CategoryController@store');
+    Route::put('/categories/{id}', 'api\v1\CategoryController@update');
+    Route::delete('/categories/{id}', 'api\v1\CategoryController@destroy');    
+    Route::post('/products', 'api\v1\ProductController@store');
+    Route::put('/products/{id}', 'api\v1\ProductController@update');
+    Route::delete('/products/{id}', 'api\v1\ProductController@destroy');
 });
